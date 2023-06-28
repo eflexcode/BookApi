@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    username: postgres
+    password: larry1234
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/book_api
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  servlet:
+    context-path: /book_api/v1
+
