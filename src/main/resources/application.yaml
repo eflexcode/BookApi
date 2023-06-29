@@ -10,5 +10,5 @@ spring:
       ddl-auto: update
 server:
   servlet:
-    context-path: /book_api/v1
+    context-path: /book_api/v1/
 

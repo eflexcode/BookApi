@@ -2,7 +2,9 @@ package com.larrex.bookapi.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -13,6 +15,8 @@ import java.sql.Timestamp;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
 
     @Id
@@ -34,6 +38,8 @@ public class Book {
     private String publishedAt;
 
     private String pageCount;
+
+    private String category;
 
     @CreationTimestamp
     @Column(name = "created_at",nullable = false,updatable = false)

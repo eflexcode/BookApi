@@ -10,14 +10,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.sql.Timestamp;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Author {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class AuthorModel {
 
     private String name;
 
@@ -25,11 +20,4 @@ public class Author {
 
     private String biography;
 
-    @CreationTimestamp
-    @Column(name = "created_at",nullable = false,updatable = false)
-    private Timestamp createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at",nullable = false,updatable = false)
-    private Timestamp updatedAt;
 }
