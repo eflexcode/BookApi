@@ -7,6 +7,8 @@ import com.larrex.bookapi.repository.AuthorRepository;
 import com.larrex.bookapi.service.AuthorService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,6 +29,16 @@ public class AuthorServiceImpl implements AuthorService {
     @Override
     public Author readAuthor(Long id) {
         return authorRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("No author found with id: " + id));
+    }
+
+    @Override
+    public Page<Author> readAuthors(Pageable pageable) {
+        return  authorRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Author> readAuthorByName(String name, Pageable pageable) {
+        return authorRepository.findByName(name, pageable);
     }
 
     @Override
